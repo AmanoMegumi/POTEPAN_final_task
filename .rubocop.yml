@@ -4,7 +4,8 @@ inherit_from:
 Rails:
   Enabled: true
 
-Exclude:
+AllCops:
+  Exclude:
     - 'vendor/**/*'
     - 'bin/**/*'
     - 'db/**/*'
@@ -12,7 +13,18 @@ Exclude:
     - 'tmp/**/*'
     - 'node_modules/**/*'
     - 'lib/tasks/auto_annotate_models.rake'
+    - 'script/**/*'
+    - '**/Gemfile'
+    - '.git/**/*ruby'
 
 # 日本語のコメントを許可
 Style/AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
   Enabled: false
