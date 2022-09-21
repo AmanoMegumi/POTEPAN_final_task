@@ -4,6 +4,7 @@ require 'spree/testing_support/factories'
 RSpec.describe "Potepan::Products", type: :request do
   describe "GET #show" do
     let(:product) { create(:product) }
+
     before do
       get potepan_product_path(product.id)
     end
