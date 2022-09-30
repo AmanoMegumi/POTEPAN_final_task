@@ -5,10 +5,10 @@ RSpec.describe "Potepan::Products", type: :request do
   describe "GET #show" do
     let(:product) { create(:product) }
     let(:image) { create(:image) }
-    let!(:filename) {
-        filename = image.attachment_blob.filename
-        "#{filename.base}#{filename.extension_with_delimiter}"
-      }
+    let!(:filename) do
+      filename = image.attachment_blob.filename
+      "#{filename.base}#{filename.extension_with_delimiter}"
+    end
 
     before do
       product.images << image
