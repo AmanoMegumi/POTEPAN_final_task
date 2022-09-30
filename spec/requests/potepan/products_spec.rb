@@ -4,8 +4,14 @@ require 'spree/testing_support/factories'
 RSpec.describe "Potepan::Products", type: :request do
   describe "GET #show" do
     let(:product) { create(:product) }
+    let(:image) { create(:image) }
+    let!(:filename) {
+        filename = image.attachment_blob.filename
+        "#{filename.base}#{filename.extension_with_delimiter}"
+      }
 
     before do
+      product.images << image
       get potepan_product_path(product.id)
     end
 
@@ -20,7 +26,7 @@ RSpec.describe "Potepan::Products", type: :request do
     end
 
     it "shows the product images" do
-      product.images.each { |image| expect(response.body).to include image.attachment(:product) }
+      expect(response.body).to include filename
     end
   end
 end
