@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe ApplicationHelper, type: :helper do
   describe "full_title(page_title)" do
     example "the argument is set" do

@@ -12,7 +12,7 @@ AllCops:
     - 'config/**/*'
     - 'tmp/**/*'
     - 'node_modules/**/*'
-    - 'lib/tasks/auto_annotate_models.rake'
+    - 'lib/tasks/**/*'
     - 'script/**/*'
     - '**/Gemfile'
     - '.git/**/*ruby'
