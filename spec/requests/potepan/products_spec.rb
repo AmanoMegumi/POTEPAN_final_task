@@ -1,11 +1,10 @@
 require 'rails_helper'
-require 'spree/testing_support/factories'
 
 RSpec.describe "Potepan::Products", type: :request do
   describe "GET #show" do
     let(:product) { create(:product) }
     let(:image) { create(:image) }
-    let!(:filename) do
+    let(:filename) do
       filename = image.attachment_blob.filename
       "#{filename.base}#{filename.extension_with_delimiter}"
     end
